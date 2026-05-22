@@ -668,3 +668,16 @@ h3 {
     animation-duration: 0.01ms !important;
   }
 }
+/* Hero image mode: when a real hero banner is uploaded, do not overlay the synthetic placeholder watch or label. */
+.hero-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #050505;
+}
+
+.hero-image::after,
+.hero-image .watch-face-preview,
+.hero-image .placeholder-label {
+  display: none;
+}
