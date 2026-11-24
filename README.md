@@ -1,95 +1,18 @@
-# Signal Labs landing page
+# Signal Labs storefront
 
-Free static landing page for Signal Labs, ready for GitHub Pages.
+Serve this directory with `python -m http.server 8765 --bind 127.0.0.1` and open http://127.0.0.1:8765/.
 
-## Files
+## Publish after approval
 
-- `index.html` — page structure and copy
-- `styles.css` — visual styling
-- `assets/` — place screenshots here
-- `.nojekyll` — tells GitHub Pages to serve this as plain static files
+1. Open the repository that serves `signal-labshq.github.io` and confirm the source in Settings > Pages. The prior setup notes specify branch publishing from `main` at the repository root. Verify the actual setting before copying files.
+2. In a checkout of that publication source, copy `index.html`, `styles.css`, `robots.txt`, `sitemap.xml`, `.nojekyll` and the `assets/store-*` images into the configured publish directory. Review and remove obsolete storefront assets there after checking references.
+3. Review the diff and preview. After commercial approval, publish via the configured Pages source and confirm the deployment and all four Garmin links.
 
-## Replace the Connect IQ URL
+## Analytics activation
 
-Search for:
+The page makes no analytics requests. GitHub Pages does not expose visitor logs for product click measurement. A GA4 standard property can measure visits, traffic sources, campaign attribution and product clicks at no hosting cost.
 
-```text
-PLACEHOLDER_CONNECT_IQ_SIGNAL_EXECUTIVE_URL
-```
-
-Replace it with the Signal Executive Connect IQ listing URL.
-
-## Replace screenshots
-
-Add final images to `/assets` using these exact filenames:
-
-```text
-assets/signal-executive-hero.png
-assets/signal-executive.png
-assets/se-prime.png
-assets/signal-horizon.png
-assets/sh-prime.png
-assets/signal-now.png
-```
-
-The page still looks acceptable if images are missing because the layout uses styled placeholders.
-
-## Support email
-
-Current email:
-
-```text
-signal.labs@etik.com
-```
-
-To change it later, search for `signal.labs@etik.com` in `index.html`.
-
-## Publish on GitHub Pages
-
-1. Create a GitHub repository named exactly:
-
-```text
-<your-github-username>.github.io
-```
-
-Example:
-
-```text
-signallabshq.github.io
-```
-
-2. Upload these files to the root of the repository:
-
-```text
-index.html
-styles.css
-.nojekyll
-assets/
-README.md
-```
-
-3. Go to repository `Settings` → `Pages`.
-4. Set source to `Deploy from a branch`.
-5. Select the `main` branch and `/root` folder.
-6. Save.
-
-Your page should publish at:
-
-```text
-https://<your-github-username>.github.io
-```
-
-GitHub says publishing can take a few minutes after changes are pushed.
-
-## Later custom domain
-
-If Signal Labs validates commercially, you can later buy a domain and point it to the same GitHub Pages site without rebuilding the page.
-
-## Notes
-
-- No JavaScript
-- No forms
-- No cookies
-- No external fonts
-- No paid dependencies
-- No analytics
+1. Obtain approval for GA4 and review consent and privacy requirements for the audience. Create a web stream for the canonical site and update the privacy notice before enabling tracking.
+2. Add the web stream tag behind any required consent controls. Use automatic page views and standard UTM parameters for acquisition reporting. Keep campaign values in the measurement session and avoid sending personal information.
+3. Wire the links carrying `data-product` to emit `connect_iq_click` with `product_id` and `product_tier`, taken from the corresponding data attributes. Register those two event parameters as event-scoped custom dimensions. Use these four identifiers: `executive`, `executive-prime`, `horizon`, `horizon-prime`.
+4. Verify every product and comparison CTA in DebugView, including an incoming test campaign. Report visits, sources and click counts by product and tier. Connect IQ outbound clicks measure intent. Purchase counts come from Garmin.
