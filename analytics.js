@@ -14,9 +14,9 @@
   }
 
   function startAnalytics() {
+    window[disableKey] = false;
     if (started) return;
     started = true;
-    window[disableKey] = false;
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('consent', 'default', {
