@@ -15,6 +15,7 @@
   <meta property="og:image:alt" content="Signal Executive Prime on a Garmin watch">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="assets/store-logo.webp" type="image/webp">
+  <script src="analytics.js" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,6 +27,16 @@
       </nav>
     </div>
   </header>
+  <section class="container analytics-consent" id="analytics-consent" aria-labelledby="analytics-consent-title" hidden>
+    <div>
+      <h2 id="analytics-consent-title" tabindex="-1">Optional analytics</h2>
+      <p>Allow Google Analytics to measure visits and Connect IQ clicks?</p>
+    </div>
+    <div class="analytics-actions">
+      <button class="button button-secondary" type="button" data-analytics-choice="accepted">Accept</button>
+      <button class="button button-secondary" type="button" data-analytics-choice="declined">Decline</button>
+    </div>
+  </section>
   <main id="main">
     <section class="hero">
       <img class="hero-image" src="assets/store-prime-hero.png" width="1440" height="720" alt="Signal Executive Prime watch face on a Garmin watch" fetchpriority="high">
@@ -45,7 +56,7 @@
         <div class="products">
         <article class="product prime" id="horizon-prime">
           <img src="assets/store-horizon-prime.png" width="500" height="500" loading="lazy" alt="Signal Horizon Prime watch face">
-          <div><p class="eyebrow">$4.99 USD</p><h3>Signal Horizon <span class="prime-word">PRIME</span></h3><p>Smart weather signals, adaptive data fields and tomorrow&rsquo;s outlook, built around a live daylight arc.</p><a class="button button-primary" href="https://apps.garmin.com/pt-BR/apps/727f7201-fe40-4571-a191-6a15049bda12" data-product="horizon-prime" data-tier="prime" aria-label="Get Signal Horizon Prime on Connect IQ">Get Prime</a></div>
+          <div><p class="eyebrow">$4.99 USD</p><h3>Signal Horizon <span class="prime-word">PRIME</span></h3><p>Smart weather signals, adaptive data fields and tomorrow&rsquo;s outlook, built around a live daylight arc.</p><a class="button button-primary" href="https://apps.garmin.com/en-US/apps/727f7201-fe40-4571-a191-6a15049bda12" data-product="horizon-prime" data-tier="prime" aria-label="Get Signal Horizon Prime on Connect IQ">Get Prime</a></div>
         </article>
         <article class="product " id="horizon">
           <img src="assets/store-horizon.png" width="500" height="500" loading="lazy" alt="Signal Horizon watch face">
@@ -67,7 +78,7 @@
             <tfoot>
               <tr class="comparison-price"><td></td><td>Free</td><td>$4.99 <small>USD</small></td></tr>
               <tr class="comparison-terms"><td></td><td>Free to download</td><td>One-time purchase. No subscription.</td></tr>
-              <tr class="comparison-cta"><td></td><td><a class="button button-secondary" href="https://apps.garmin.com/en-US/apps/36dd08b7-584b-4460-99bd-449e33d65ebd" data-product="horizon" data-tier="free" aria-label="Download Signal Horizon on Connect IQ">Download free</a></td><td><a class="button button-primary" href="https://apps.garmin.com/pt-BR/apps/727f7201-fe40-4571-a191-6a15049bda12" data-product="horizon-prime" data-tier="prime" aria-label="Get Signal Horizon Prime on Connect IQ">Get Prime</a></td></tr>
+              <tr class="comparison-cta"><td></td><td><a class="button button-secondary" href="https://apps.garmin.com/en-US/apps/36dd08b7-584b-4460-99bd-449e33d65ebd" data-product="horizon" data-tier="free" aria-label="Download Signal Horizon on Connect IQ">Download free</a></td><td><a class="button button-primary" href="https://apps.garmin.com/en-US/apps/727f7201-fe40-4571-a191-6a15049bda12" data-product="horizon-prime" data-tier="prime" aria-label="Get Signal Horizon Prime on Connect IQ">Get Prime</a></td></tr>
             </tfoot>
           </table>
         </section>
@@ -126,7 +137,7 @@
       <div class="container">
         <h2>Support</h2>
         <details><summary>Which Garmin watches are compatible?</summary><p>Check Compatible Devices on the Connect IQ listing for the face you want.</p></details>
-        <details><summary>What is the difference between Free and Prime?</summary><p>Free covers the daily essentials. Prime adds a richer rotating signal display, adaptive fields and more theme options. See the <a href="#compare">collection comparison</a> for details.</p></details>
+        <details><summary>What is the difference between Free and Prime?</summary><p>Free covers the daily essentials. Prime adds a richer rotating signal display, adaptive fields and more theme options. See the <a href="#compare">Horizon comparison</a> or <a href="#compare-executive">Executive comparison</a> for details.</p></details>
         <details><summary>Is Prime a one-time purchase?</summary><p>Yes. Prime is a one-time purchase through Connect IQ. Regional pricing may vary.</p></details>
         <details><summary>How do I install a watch face?</summary><p>In the Connect IQ Store app, choose your watch, open the watch face listing and select Install. Accept any required permissions and sync your watch.</p></details>
         <details><summary>How do I access watch-face settings?</summary><p>In the Connect IQ Store app, open Device, then My Watch Faces. Select your face, open Settings where available, and save your changes.</p></details>
@@ -140,7 +151,8 @@
       <strong>Signal Labs</strong>
       <p><a href="mailto:signal.labs@etik.com">signal.labs@etik.com</a></p>
       <p>Signal Labs is an independent watch-face developer and is not affiliated with Garmin. Garmin and Connect IQ are trademarks of Garmin Ltd. or its subsidiaries.</p>
-      <p>This website uses no analytics or tracking cookies. Connect IQ visits and purchases are subject to <a href="https://www.garmin.com/en-US/privacy/global/">Garmin&rsquo;s privacy policy</a>.</p>
+      <p>With your permission, Google Analytics uses cookies to measure visits, traffic sources, and clicks to Connect IQ. Your preference is stored in this browser. <a href="https://policies.google.com/privacy">Google&rsquo;s privacy policy</a> describes how Google handles data. Connect IQ visits and purchases are subject to <a href="https://www.garmin.com/en-US/privacy/global/">Garmin&rsquo;s privacy policy</a>.</p>
+      <p><a href="#analytics-consent" id="analytics-settings" hidden>Analytics preferences</a></p>
     </div>
   </footer>
 </body>

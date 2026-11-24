@@ -37,6 +37,12 @@ nav a:hover { color: var(--gold); }
 .button-primary { background: var(--gold); color: #12100b; }
 .button-secondary { background: var(--bg); color: var(--text); border-color: #76664e; }
 .button:hover { filter: brightness(1.16); }
+.analytics-consent:not([hidden]) { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .65rem 1rem; padding-block: .8rem; border-bottom: 1px solid var(--line); }
+.analytics-consent h2 { font-size: 1rem; }
+.analytics-consent p { margin: .25rem 0 0; font-size: .875rem; }
+.analytics-actions { display: flex; gap: .65rem; }
+.analytics-actions .button { min-width: 6rem; font: inherit; font-weight: 700; cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .reassurance { font-size: .875rem; margin-top: .85rem; }
 .hero .actions .button { width: 10rem; max-width: 100%; padding-inline: .5rem; text-align: center; }
 .philosophy-label { margin: 0 0 .5rem; }
